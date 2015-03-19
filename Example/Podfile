@@ -1,0 +1,8 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+
+target 'PearsonDictionary', :exclusive => true do
+  pod "PearsonDictionary", :path => "../"
+
+  
+end
