@@ -12,10 +12,7 @@ Pod::Spec.new do |s|
   s.version          = "0.1.0"
   s.summary          = "An in development pod for accessing the Pearson Dictionary API."
   s.description      = <<-DESC
-                       An optional longer description of PearsonDictionary
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                       Pearson Dictionary is a verbose dictionary API you can access on (developer.pearson.com)[http://developer.pearson.com/]. This cocoapod is intended to provide easy iOS access to their (dictionary API)[http://developer.pearson.com/apis/dictionaries], but is still in the early stages of development. An API key is needed to use this cocoapod (it's free!).
                        DESC
   s.homepage         = "https://github.com/msencenb/PearsonDictionary"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
