@@ -10,18 +10,18 @@
 Pod::Spec.new do |s|
   s.name             = "PearsonDictionary"
   s.version          = "0.1.0"
-  s.summary          = "An in development pod for accessing the Pearson Dictionary API."
+  s.summary          = "A short description of PearsonDictionary."
   s.description      = <<-DESC
                        An optional longer description of PearsonDictionary
 
                        * Markdown format.
                        * Don't worry about the indent, we strip it!
                        DESC
-  s.homepage         = "https://github.com/msencenb/PearsonDictionary"
+  s.homepage         = "https://github.com/<GITHUB_USERNAME>/PearsonDictionary"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Matt Sencenbaugh" => "matt.sencenbaugh@gmail.com" }
-  s.source           = { :git => "https://github.com/msencenb/PearsonDictionary.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/PearsonDictionary.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '7.0'

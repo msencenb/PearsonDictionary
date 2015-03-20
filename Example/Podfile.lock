@@ -1,0 +1,14 @@
+PODS:
+  - PearsonDictionary (0.1.0)
+
+DEPENDENCIES:
+  - PearsonDictionary (from `../`)
+
+EXTERNAL SOURCES:
+  PearsonDictionary:
+    :path: ../
+
+SPEC CHECKSUMS:
+  PearsonDictionary: 4801c1b0f48bb62afd51434e0ce7e5aa1a10986e
+
+COCOAPODS: 0.35.0
