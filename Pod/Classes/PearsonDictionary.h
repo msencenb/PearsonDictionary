@@ -19,4 +19,6 @@ typedef void (^PearsonDictionaryErrorHandler)(NSError *error, NSNumber *statusCo
 -(id)initWithApiKey:(NSString *)ApiKey;
 
 -(void)lookupInformationForHeadword:(NSString *)headword withSuccessHandler:(PearsonDictionarySuccessHandler)successHandler withErrorHandler:(PearsonDictionaryErrorHandler)errorHandler;
+
++(NSString *)baseURL;
 @end

@@ -10,15 +10,22 @@
 @interface PearsonDictionary()
 @property (nonatomic, copy) NSString *apiKey;
 @property (nonatomic, copy) NSString *consumerSecret;
+@property (nonatomic, copy) NSString *baseURL;
 @end
 
 //http://developer.pearson.com/content-apis/get-started
 @implementation PearsonDictionary
++(NSString *)baseURL
+{
+    return @"https://api.pearson.com";
+}
+
 -(id)initWithApiKey:(NSString *)apiKey
 {
     self = [super init];
     if (self) {
         self.apiKey = apiKey;
+        self.baseURL = [PearsonDictionary baseURL];
     }
     return self;
 }
@@ -27,7 +34,7 @@
 -(void)lookupInformationForHeadword:(NSString *)headword withSuccessHandler:(PearsonDictionarySuccessHandler)successHandler withErrorHandler:(PearsonDictionaryErrorHandler)errorHandler
 {
     //TODO multiple dictionaries
-    NSString *urlString = [NSString stringWithFormat:@"https://api.pearson.com/v2/dictionaries/ldoce5/entries?headword=%@&apikey=%@", headword, self.apiKey];
+    NSString *urlString = [NSString stringWithFormat:@"%@/v2/dictionaries/ldoce5/entries?headword=%@&apikey=%@", self.baseURL, headword, self.apiKey];
     NSURL *url = [NSURL URLWithString:urlString];
     NSLog(@"%@", [url absoluteString]);
     
@@ -81,23 +88,14 @@
 {
     NSString *readableError = nil;
     switch (urlResponse.statusCode) {
-        case 400:
-            readableError = @"The phone number entered is invalid. Ensure you have correctly entered a 10 digit US based phone number and excluded the country code.";
-            break;
-            
         case 401:
             readableError = @"You are unauthorized to view this information, please check your api key.";
             break;
-            
-        case 402:
-            readableError = @"You don't have enough money in your account for this query. Please add more money to your EveryoneAPI account.";
-            break;
-            
         case 403:
-            readableError = @"You've been rate limited for possible malicious activity.";
+            readableError = @"Number of monthly API calls exceeded.";
             break;
         case 404:
-            readableError = @"There is no information currently available for the phone number entered";
+            readableError = @"Resource not found.";
             break;
             
         default:

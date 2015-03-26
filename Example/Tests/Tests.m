@@ -31,7 +31,7 @@
 {
     XCTestExpectation *expectation = [self expectationWithDescription:@"Testing retrieve information for happy"];
     
-    [self.dictionary lookupInformationForHeadword:@"sad" withSuccessHandler:^(PearsonDictionaryResponseObject *responseObject){
+    [self.dictionary lookupInformationForHeadword:@"happy" withSuccessHandler:^(PearsonDictionaryResponseObject *responseObject){
         NSLog(@"%@",responseObject);
         XCTAssertNotNil(responseObject);
         [expectation fulfill];
